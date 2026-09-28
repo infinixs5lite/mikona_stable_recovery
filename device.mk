@@ -17,15 +17,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Configure gsi_keys.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Inherit from alioth  device
-$(call inherit-product, device/xiaomi/alioth/device.mk)
-
-# Inherit any OrangeFox-specific settings
-$(call inherit-product-if-exists, device/xiaomi/alioth/fox_alioth.mk)
-
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
-
 # Configure Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
