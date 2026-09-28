@@ -10,6 +10,15 @@ PRODUCT_RELEASE_NAME := alioth
 
 DEVICE_PATH := device/xiaomi/alioth
 
+# Inherit from alioth  device
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
+
+# Inherit any OrangeFox-specific settings
+$(call inherit-product-if-exists, $(DEVICE_PATH)/fox_alioth.mk)
+
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := twrp_$(PRODUCT_RELEASE_NAME)
 PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
