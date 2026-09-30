@@ -62,15 +62,21 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_DELETE_AROMAFM=1
     export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
     export FOX_VERSION="R11.3_1"
+
+	# Specify path for fox use
+	export FOX_SETTINGS_ROOT_DIRECTORY="/sdcard/Android/"
 	
 	# the magisk addon
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v29.0.zip
-
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v30.7.zip
+  
+    # Hide notch 
+    export OF_HIDE_NOTCH=1
+	
 	# screen settings
-	export OF_SCREEN_H=2400
-	export OF_STATUS_H=100
-	export OF_STATUS_INDENT_LEFT=48
-	export OF_STATUS_INDENT_RIGHT=48
+	export OF_SCREEN_H=1900
+	export OF_STATUS_H=72
+	export OF_STATUS_INDENT_LEFT=20
+	export OF_STATUS_INDENT_RIGHT=20
   	export OF_HIDE_NOTCH=0
 	export OF_CLOCK_POS=1
 
@@ -98,7 +104,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
   	   export | grep "FOX" >> $FOX_BUILD_LOG_FILE
   	   export | grep "OF_" >> $FOX_BUILD_LOG_FILE
-   	   export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
+   	   export | grep "TARGET_" >> $FOX_BUILD_LOG_FI
+	   LE
   	   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
  	fi
 fi
