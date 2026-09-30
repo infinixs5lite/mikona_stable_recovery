@@ -71,6 +71,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   
     # Hide notch 
     export OF_HIDE_NOTCH=1
+   
+   # Auto reboot say no
+	export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
 	
 	# screen settings
 	export OF_SCREEN_H=1900
